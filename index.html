@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DA'LIMBO | Between Worlds</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: 80px; /* space for footer */
+    }
+
+    /* Starfield background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: moveStars 100s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-500px, -500px); }
+    }
+
+    /* Glass effect */
+    .glass {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+      border-color: rgba(180, 100, 255, 0.6);
+    }
+
+    /* Sidebar (mobile menu) */
+    #mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      top: 64px; /* place below navbar */
+      right: 0; /* align to menu button */
+    }
+    #mobile-menu.active {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Star Background -->
+  <div class="stars"></div>
+
+  <!-- Navbar -->
+  <nav class="glass fixed top-0 w-full z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-2xl md:text-3xl font-bold tracking-wider">
+        <span class="text-purple-400">DA'</span><span class="text-indigo-400">LIMBO</span>
+      </div>
+      <button class="md:hidden text-gray-300" id="menu-toggle">
+        <i data-feather="menu"></i>
+      </button>
+      <div class="hidden md:flex space-x-8">
+        <a href="#bugreport" class="text-gray-300 hover:text-purple-300 transition-colors">Bug Report</a>
+        <a href="#gamesure" class="text-gray-300 hover:text-indigo-300 transition-colors">GameSure</a>
+        <a href="#cloxer" class="text-gray-300 hover:text-purple-300 transition-colors">Cloxer</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div id="mobile-menu" class="fixed h-full w-64 glass z-40 flex flex-col p-6 space-y-6">
+    <a href="#bugreport" class="text-gray-300 hover:text-purple-300 transition-colors">Bug Report</a>
+    <a href="#gamesure" class="text-gray-300 hover:text-indigo-300 transition-colors">GameSure</a>
+    <a href="#cloxer" class="text-gray-300 hover:text-purple-300 transition-colors">Cloxer</a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="pt-28 pb-20 px-4 md:px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-3xl md:text-6xl font-bold mb-4">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
+          Between Worlds
+        </span>
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-16">
+        A surreal hub of interactive apps — designed to entertain, connect, and protect your digital life.
+      </p>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-4">
+      <!-- Card 1 -->
+      <a id="bugreport" href="https://play.google.com/store/apps/details?id=dalimbo.com.bug_report" target="_blank" 
+         class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col">
+        <div class="h-1/2">
+          <img src="images/bug_report_app_icon.png" alt="BugReport App" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="p-6 flex-1">
+          <h3 class="text-xl font-semibold mb-3 text-purple-300">Bug Report</h3>
+          <p class="text-gray-300">🔒 Exposes how much an apps really collect. Bug Report shows how your data can be taken and used — because privacy should never be a mystery.</p>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a id="gamesure" href="https://play.google.com/store/apps/details?id=com.dalimbo.game_x" target="_blank" 
+         class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col">
+        <div class="h-1/2">
+          <img src="images/gamesure_app_icon_2.png" alt="GameSure App" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="p-6 flex-1">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-300">GameSure</h3>
+          <p class="text-gray-300">🎮 A pack of mini-games — offline, ad-free, and smooth. Built with Flutter + Flame for seamless cross-platform fun.</p>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a id="cloxer" href="https://play.google.com/store/apps/details?id=com.example.cloxer" target="_blank" 
+         class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col">
+        <div class="h-1/2">
+          <img src="images/cloxer_app_icon.png" alt="Cloxer App" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="p-6 flex-1">
+          <h3 class="text-xl font-semibold mb-3 text-purple-300">Cloxer</h3>
+          <p class="text-gray-300">❤️ Spark intimacy with playful couple challenges: Truth, Dare, Scratch games, and bonding quizzes.</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="glass fixed bottom-0 w-full py-4">
+    <div class="max-w-7xl mx-auto text-center text-gray-400">
+      © <span class="text-purple-300">dalimbo</span> | Step into the unknown
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle sidebar
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close if clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
