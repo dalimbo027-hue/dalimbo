@@ -44,15 +44,17 @@
     }
 
     .card-hover {
-      transition: all 0.3s ease;
+      transition: all 0.35s ease;
       transform: translateY(0);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-hover:hover {
+      transform: translateY(-10px);
+      border-color: rgba(180, 100, 255, 0.9);
+      box-shadow: 0 0 20px rgba(180, 100, 255, 0.6), 
+              0 0 40px rgba(100, 150, 255, 0.4);
     }
 
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
-      border-color: rgba(180, 100, 255, 0.6);
-    }
 
     /* Sidebar (mobile menu) */
     #mobile-menu {
@@ -81,71 +83,113 @@
         <i data-feather="menu"></i>
       </button>
       <div class="hidden md:flex space-x-8">
-        <a href="https://play.google.com/store/apps/details?id=dalimbo.com.bug_report" class="text-gray-300 hover:text-purple-300 transition-colors">Bug Report</a>
-        <a href="#gamesure" class="text-gray-300 hover:text-indigo-300 transition-colors">GameSure</a>
-        <a href="#cloxer" class="text-gray-300 hover:text-purple-300 transition-colors">Cloxer</a>
+        <a href="https://play.google.com/store/apps/details?id=dalimbo.com.bug_report" target="_blank" class="text-gray-300 hover:text-purple-300 transition-colors">Bug Report</a>
+        <a href="https://play.google.com/store/apps/details?id=com.dalimbo.game_x" target="_blank" class="text-gray-300 hover:text-indigo-300 transition-colors">GameSure</a>
+        <a href="https://play.google.com/store/apps/details?id=com.dalimbo.cloxer" target="_blank" class="text-gray-300 hover:text-purple-300 transition-colors">Cloxer</a>
       </div>
     </div>
   </nav>
 
   <!-- Mobile Sidebar -->
   <div id="mobile-menu" class="fixed h-full w-64 glass z-40 flex flex-col p-6 space-y-6">
-    <a href="#bugreport" class="text-gray-300 hover:text-purple-300 transition-colors">Bug Report</a>
-    <a href="https://play.google.com/store/apps/details?id=com.dalimbo.game_x" class="text-gray-300 hover:text-indigo-300 transition-colors">GameSure</a>
-    <a href="#cloxer" class="text-gray-300 hover:text-purple-300 transition-colors">Cloxer</a>
+    <a href="https://play.google.com/store/apps/details?id=dalimbo.com.bug_report" target="_blank" class="text-gray-300 hover:text-purple-300 transition-colors">Bug Report</a>
+    <a href="#https://play.google.com/store/apps/details?id=com.dalimbo.game_x" target="_blank" class="text-gray-300 hover:text-indigo-300 transition-colors">GameSure</a>
+    <a href="https://play.google.com/store/apps/details?id=com.dalimbo.cloxer" target="_blank" class="text-gray-300 hover:text-purple-300 transition-colors">Cloxer</a>
   </div>
 
   <!-- Main Content -->
-  <main class="pt-28 pb-20 px-4 md:px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h1 class="text-3xl md:text-6xl font-bold mb-4">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
-          Between Worlds
-        </span>
-      </h1>
-      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-16">
-        A surreal hub of interactive apps — designed to entertain, connect, and protect your digital life.
-      </p>
+<main class="pt-24 pb-16 px-4 md:px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h1 class="text-2xl md:text-5xl font-bold mb-4">
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
+        Between Worlds
+      </span>
+    </h1>
+    <p class="text-gray-300 text-base md:text-lg max-w-xl mx-auto mb-12">
+      A surreal hub of interactive apps — designed to entertain, connect, and protect your digital life.
+    </p>
+  </div>
+
+
+    <div class="flex flex-wrap justify-center gap-12 px-4">
+  <!-- Card 1 -->
+  <a id="bugreport" href="https://play.google.com/store/apps/details?id=dalimbo.com.bug_report" target="_blank" 
+     class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col w-80 md:w-96 h-[340px] group">
+    
+    <!-- Image (60%) -->
+    <div class="h-[55%] bg-black flex items-center justify-center">
+      <img src="images/bug_report_app_icon.png" alt="BugReport App" 
+           class="h-full w-full object-contain p-2" loading="lazy">
     </div>
 
-    <!-- Cards Section -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-4">
-      <!-- Card 1 -->
-      <a id="bugreport" href="https://play.google.com/store/apps/details?id=dalimbo.com.bug_report" target="_blank" 
-         class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col">
-        <div class="h-1/2">
-          <img src="images/bug_report_app_icon.png" alt="BugReport App" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="p-6 flex-1">
-          <h3 class="text-xl font-semibold mb-3 text-purple-300">Bug Report</h3>
-          <p class="text-gray-300">🔒 Exposes how much an apps really collect. Bug Report shows how your data can be taken and used — because privacy should never be a mystery. Click to know more..</p>
-        </div>
-      </a>
-
-      <!-- Card 2 -->
-      <a id="gamesure" href="https://play.google.com/store/apps/details?id=com.dalimbo.game_x" target="_blank" 
-         class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col">
-        <div class="h-1/2">
-          <img src="images/gamesure_app_icon_2.png" alt="GameSure App" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="p-6 flex-1">
-          <h3 class="text-xl font-semibold mb-3 text-indigo-300">GameSure</h3>
-          <p class="text-gray-300">🎮 A pack of mini-games — offline, ad-free, and smooth. Built with Flutter + Flame for seamless cross-platform fun. Click to know more..</p>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
-      <a id="cloxer" href="https://play.google.com/store/apps/details?id=com.example.cloxer" target="_blank" 
-         class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col">
-        <div class="h-1/2">
-          <img src="images/cloxer_app_icon.png" alt="Cloxer App" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div class="p-6 flex-1">
-          <h3 class="text-xl font-semibold mb-3 text-purple-300">Cloxer</h3>
-          <p class="text-gray-300">❤️ Spark intimacy with playful couple challenges: Truth, Dare, Scratch games, and bonding quizzes. Click to know more..</p>
-        </div>
-      </a>
+    <!-- Text (40%) -->
+    <div class="h-[45%] flex flex-col justify-between p-4">
+      <div class="overflow-hidden">
+        <h3 class="text-lg font-semibold mb-1 text-purple-300">Bug Report</h3>
+        <p class="text-gray-300 text-sm leading-snug">
+          🔒 See what apps really collect. Bug Report reveals hidden data grabs —
+          because privacy should never be a mystery.
+        </p>
+      </div>
+      <span class="mt-2 text-purple-400 font-medium group-hover:text-purple-300 transition-colors text-sm">
+        Click to uncover
+      </span>
     </div>
+  </a>
+
+  <!-- Card 2 -->
+  <a id="gamesure" href="https://play.google.com/store/apps/details?id=com.dalimbo.game_x" target="_blank" 
+     class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col w-80 md:w-96 h-[340px] group">
+    
+    <!-- Image (60%) -->
+    <div class="h-[55%] bg-black flex items-center justify-center">
+      <img src="images/gamesure_app_icon_2.png" alt="GameSure App" 
+           class="h-full w-full object-contain p-2" loading="lazy">
+    </div>
+
+    <!-- Text (40%) -->
+    <div class="h-[45%] flex flex-col justify-between p-4">
+      <div class="overflow-hidden">
+        <h3 class="text-lg font-semibold mb-1 text-indigo-300">GameSure</h3>
+        <p class="text-gray-300 text-sm leading-snug">
+          🎮 Offline mini-games — smooth, ad-free, and fun anywhere.
+          Built with Flutter + Flame for pure cross-platform play.
+        </p>
+      </div>
+      <span class="mt-2 text-indigo-400 font-medium group-hover:text-indigo-300 transition-colors text-sm">
+        Click to play
+      </span>
+    </div>
+  </a>
+
+  <!-- Card 3 -->
+  <a id="cloxer" href="https://play.google.com/store/apps/details?id=com.dalimbo.cloxer" target="_blank" 
+     class="card-hover glass rounded-xl overflow-hidden border border-gray-800 flex flex-col w-80 md:w-96 h-[340px] group">
+    
+    <!-- Image (60%) -->
+    <div class="h-[55%] bg-black flex items-center justify-center">
+      <img src="images/cloxer_app_icon.png" alt="Cloxer App" 
+           class="h-full w-full object-contain p-2" loading="lazy">
+    </div>
+
+    <!-- Text (40%) -->
+    <div class="h-[45%] flex flex-col justify-between p-4">
+      <div class="overflow-hidden">
+        <h3 class="text-lg font-semibold mb-1 text-pink-300">Cloxer</h3>
+        <p class="text-gray-300 text-sm leading-snug">
+          ❤️ Spark intimacy with couple challenges:
+          Truth, Dare, Scratch games & bonding quizzes.
+        </p>
+      </div>
+      <span class="mt-2 text-pink-400 font-medium group-hover:text-pink-300 transition-colors text-sm">
+        Click to start
+      </span>
+    </div>
+  </a>
+</div>
+
+
+
   </main>
 
   <!-- Footer -->
@@ -176,4 +220,3 @@
   </script>
 </body>
 </html>
-
